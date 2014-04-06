@@ -1,10 +1,8 @@
 
 // Userlist data array for filling in info box
 var userListData = [];
-console.log("yolo2"); 
 // DOM Ready =============================================================
 $(document).ready(function() {
-  console.log("yolo"); 
   // Populate the user table on initial page load
   populateTable();
     // Username link click
@@ -60,7 +58,8 @@ function showUserInfo(event) {
   $('#userInfoName').text(thisUserObject.fullname);
   $('#userInfoAge').text(thisUserObject.age);
   $('#userInfoGender').text(thisUserObject.gender);
-  $('#userInfoLocation').text(thisUserObject.location);
+  $('#userInfoLocation').text(thisUserObject.location + ' lalalalal');
+  $('#userInfoFitBit').text(thisUserObject.fitbit); 
 };
 
 
@@ -84,7 +83,8 @@ function addUser(event) {
       'fullname': $('#addUser fieldset input#inputUserFullname').val(),
       'age': $('#addUser fieldset input#inputUserAge').val(),
       'location': $('#addUser fieldset input#inputUserLocation').val(),
-      'gender': $('#addUser fieldset input#inputUserGender').val()
+      'gender': $('#addUser fieldset input#inputUserGender').val(), 
+      'fitbit': $('addUser fieldset input#inputUserFitBit').val()
     }
 
     // Use AJAX to post the object to our adduser service
