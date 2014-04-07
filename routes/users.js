@@ -1,6 +1,5 @@
 var path = require('path');
-var models = path.dirNamerequire('.././qServerModels'); 
-var user = require('./models/User')
+var user = require('../models/User')
 var model = user.model; 
 var schema = user.schema; 
 

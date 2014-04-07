@@ -7,7 +7,6 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var mongoose = require('mongoose'); 
-
 var app = express();
 
 // all environments
@@ -25,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 require('./_routes.js')(app);
+
 
 //Db 
 var db = mongoose.connect('mongodb://localhost/qserver'); 
