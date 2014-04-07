@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 require('./_routes.js')(app);
 
 //Db 
-mongoose.connect('mongodb://localhost/qserver'); 
+var db = mongoose.connect('mongodb://localhost/qserver'); 
 
 // development only
 if ('development' == app.get('env')) {
