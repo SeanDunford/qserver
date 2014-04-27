@@ -27,11 +27,15 @@ require('./_routes.js')(app);
 
 
 //Db 
-var db = mongoose.connect('mongodb://localhost/qserver'); 
+var db;
 
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
+  db = mongoose.connect('mongodb://localhost/qserver'); 
+}
+else if('production' == app.get('env')){
+  db = mongoose.connect('mongodb://heroku_app24607371:heroku_app24607371@ds033887.mongolab.com:33887/heroku_app24607371'); 	
 }
 
 http.createServer(app).listen(app.get('port'), function(){
