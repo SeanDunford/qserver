@@ -1,7 +1,7 @@
 var path = require('path');
 var user = require('../models/User')
-var model = user.model; 
-var schema = user.schema; 
+var userModel = user.model; 
+var userSchema = user.schema; 
 
 
 exports.index = function(req, res){ 
@@ -18,11 +18,11 @@ exports.create =  function (req, res) {
   var user;
   console.log("POST: ");
   console.log(req.body);
-  user = new user.model({
-     name:        req.body.title, 
+  user = new userModel({
+     name:        req.body.name, 
      location:     req.body.location, 
      gender:       req.body.gender, 
-     fitbitApiKey: req.body.title, 
+     fitbitApiKey: req.body.fitbitApiKey
   });
   user.save(function (err) {
     if (!err) {

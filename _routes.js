@@ -4,7 +4,6 @@ var page1 = require('./routes/page1');
 var page2 = require('./routes/page2'); 
 var def = require('./routes/default'); 
 
-
 function mount(app) {
    //routes go here	
    app.get('/', routes.index);
