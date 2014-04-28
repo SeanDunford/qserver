@@ -38,7 +38,8 @@ if ('development' == app.get('env')) {
 }
 else if('production' == app.get('env')){
   console.log("i r production"); 
-  db = mongoose.connect('mongodb://qselfers:@dam1saking@ds033887.mongolab.com:33887/heroku_app24607371'); 	
+  //db = mongoose.connect('mongodb://qselfers:@dam1saking@ds033887.mongolab.com:33887/heroku_app24607371'); 	
+  db = mongoose.connect('mongodb://qselfers:adam1saking@ds033887.mongolab.com:33887/heroku_app24607371'); 
 }
 
 http.createServer(app).listen(app.get('port'), function(){
