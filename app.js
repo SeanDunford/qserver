@@ -30,11 +30,14 @@ require('./_routes.js')(app);
 var db;
 
 // development only
+console.log("Logging dat envVar: " + process.env.NODE_ENV); 
 if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
-  db = mongoose.connect('mongodb://localhost/qserver'); 
+   app.use(express.errorHandler());
+   console.log("i r development"); 
+   db = mongoose.connect('mongodb://localhost/qserver'); 
 }
 else if('production' == app.get('env')){
+  console.log("i r production"); 
   db = mongoose.connect('mongodb://heroku_app24607371:heroku_app24607371@ds033887.mongolab.com:33887/heroku_app24607371'); 	
 }
 
